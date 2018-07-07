@@ -137,9 +137,9 @@ input.addEventListener("keyup", function(event) {
       <button class="uk-modal-close-default" type="button" uk-close></button>
   	    <p id="space"></p>
        	  <div id="alerta"></div>
+       	    <h5 id="title_facabusca">Faça a busca do instrumento</h5>
             <form>
               <center>
-                <h5 id="title_facabusca">Faça a busca do instrumento</h5>
               </center>
               <input class="uk-input" type="text" placeholder="Modelo do Instrumento" id="nome_i">
 	               <select class="uk-select espaco" id="select_option"></select>
@@ -150,6 +150,8 @@ input.addEventListener("keyup", function(event) {
             	      	 <option value="pressao">Pressão</option>
             	         <option value="nivel">Nível</option>
             	      	 <option value="CONTROLE">Controle</option>
+            	      	 <option value="Densidade">Densidade</option>
+            	      	 <option value="posicao">Posição</option>
             	      </select>
 	              <center>
 	       	       <button type="button" class="uk-button uk-button-default space" id="space_button" onclick="busca_instrumento();">Buscar</button>

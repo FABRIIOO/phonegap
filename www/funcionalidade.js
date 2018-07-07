@@ -1335,8 +1335,8 @@ function busca_instrumento(){
 	                marca_i : fabricante,
 	                variavel_p : variavel_p
 	          },beforeSend : function(){
-    	   document.getElementById('alerta').innerHTML = '<center><i class="fa fa-cog fa-spin fa-3x fa-fw"></i></center>';
-    	   document.getElementById('title_facabusca').innerHTML = 'Buscando...';
+    	   document.getElementById('alerta').innerHTML = '<center><i class="fa fa-cog fa-spin fa-3x fa-fw"></i><p>Buscando...</p></center>';
+    	  
       	   }
         }).done(function(data){
 
@@ -1372,5 +1372,3 @@ function pdfopen(){
 	  	var url = document.getElementById('pdf').innerHTML;
 			cordova.InAppBrowser.open('https://docs.google.com/viewer?url=http://plistone.requestwf.com.br/codigo_php/pdf/' + url,'_blank, location=yes');
 }
-
-
