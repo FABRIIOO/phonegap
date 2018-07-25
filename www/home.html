@@ -11,6 +11,10 @@
         <script src="js/uikit-icons.min.js"></script>
         <script src="funcionalidade.js"></script>
 
+    <script src="https://cdn.rawgit.com/LeaVerou/awesomplete/gh-pages/awesomplete.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.rawgit.com/LeaVerou/awesomplete/gh-pages/awesomplete.css">
+
      <style>
 
      	/*icone da engranagem*/
@@ -86,6 +90,11 @@
 	font-weight: bold;
  }
 
+ .awesomplete{
+ 	width: 100%;
+ 	background-color: silver;
+ }
+
  </style>
 
     </head>
@@ -103,7 +112,7 @@ input.addEventListener("keyup", function(event) {
 });
 
 </script>	
-
+        
 <!------------------------------------------------------------------home do app------------------------------------------------------------->
 <main id="home_app" class="uk-animation-scale-down">
   <a class="uk-button uk-button-default" href="#modal-full" id="botao2" uk-toggle></a>
@@ -132,6 +141,7 @@ input.addEventListener("keyup", function(event) {
         <i class="fa fa-search button_search2"> Buscar instrumento</i>
       </h5>
     </a>
+
    <div id="modal-center" class="uk-flex-top" uk-modal>
     <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
       <button class="uk-modal-close-default" type="button" uk-close></button>
@@ -353,7 +363,9 @@ input.addEventListener("keyup", function(event) {
 <!---------------------------------------------------------------------------rodape---------------------------------------------------------->
 <div class="rodape">
 	<a  class="fa fa-home inicio" aria-hidden="true" onclick="paginaHome();"></a>
+	<a type="button" onclick="scan()" class="fa fa-camera" aria-hidden="true"></a>
 	<a  class="fa fa-superscript calculo_icone" aria-hidden="true" onclick="paginaCalculo();"></a>
+	
 </div>
 
   <script>
@@ -365,6 +377,32 @@ input.addEventListener("keyup", function(event) {
        document.getElementById('calculo').style.display = 'none';
        document.getElementById('home_app').style.display = '';
     }
+ 
+
+var input = document.getElementById("nome_i");
+var awesomplete = new Awesomplete(input, {
+  minChars: 1,
+  maxItems: 5,
+  autoFirst: true
+});
+$.ajax({
+          url : "http://plistone.requestwf.com.br/codigo_php/modelo_instrumento.php",
+          type : 'post',
+     
+          beforeSend : function(){
+               $("#resultado").html("ENVIANDO...");
+          }
+     })
+     .done(function(msg){
+
+        awesomplete.list = msg;
+        	
+     })
+     .fail(function(jqXHR, textStatus, msg){
+          alert(msg);
+     }); 
+
+
   </script>
 
     </body>

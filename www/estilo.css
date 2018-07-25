@@ -48,7 +48,6 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-   	text-align: center;
         	
 }
 
@@ -107,11 +106,12 @@
 
 /*icone de home*/
 .inicio{
-	margin-right: 120px;
 	font-size: 30px;
 	color: white;
 	margin-top: 10px;			
 	text-decoration: none;
+	float: left;
+	margin-left: 20px;
 }
 .inicio:hover{
 	text-decoration: none;
@@ -123,8 +123,23 @@
 	font-size: 30px;
 	color: white;
 	text-decoration: none;
+	margin-top: 10px;
+	margin-right: 20px;
+	float: right;	
 }
 .calculo_icone:hover{
+	color: silver;
+	text-decoration: none;
+}
+
+/*icone da camera*/
+.fa-camera{
+	font-size: 33px;
+	color: white;
+	text-decoration: none;
+	margin-top: 10px;
+}
+.fa-camera:hover{
 	color: silver;
 	text-decoration: none;
 }

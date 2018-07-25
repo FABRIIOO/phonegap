@@ -1372,3 +1372,14 @@ function pdfopen(){
 	  	var url = document.getElementById('pdf').innerHTML;
 			cordova.InAppBrowser.open('https://docs.google.com/viewer?url=http://plistone.requestwf.com.br/codigo_php/pdf/' + url,'_blank, location=yes');
 }
+
+
+//funcao para acionar a cabera 
+         function scan()
+            {
+                cordova.plugins.barcodeScanner.scan(
+                    function (result) {
+                    	alert(result.text);
+                    }
+               );
+            }
